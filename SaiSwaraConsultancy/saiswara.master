@@ -1,0 +1,303 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="saiswara.master.cs" Inherits="saiswara" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Saiswara Consultancy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/saiswara_bootstrap.min.css"/>
+<link rel="stylesheet" href="css/saiswara_style.css">
+    <link href="css/saiswara_owl.carousel.css" rel="stylesheet" />
+    <link href="css/saiswara_animate.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"/>
+    
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,600" rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+  <%--<script src="https://blackrockdigital.github.io/startbootstrap-scrolling-nav/vendor/jquery-easing/jquery.easing.min.js"></script>--%>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <section style="background: #3b3c3e;">
+<div class="container">
+<div class="row">
+<div class="headertop">
+<div class="col-sm-4 col-md-4" >
+<img src="images/map-icon.jpg" class="img-responsive top-img"/><p class="header-textleft">Riverwood Park Building No.-12/506 <br />Kalyan Shil Road, Near Desai Naka</p>
+</div>
+<div class="col-sm-4 col-md-4">
+<img src="images/phone-icon.jpg" class="img-responsive top-img"/><p class="header-textright">7039122898 | 8108333524</p></div>
+<div class="col-sm-4 col-md-4">
+<div class="social-footer social-icon">
+	<a href="#" class="sprite in"></a>
+	<a href="#" class="sprite tw"></a>
+    <a href="#" class="sprite fb"></a>
+	<a href="#" class="sprite g"></a>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+    <header class="header-wrapper" style="display: block;">
+<%--<div class="main-header" id="main">
+<div class="container relative">
+<div class="col-sm-2 comp-logo"><img src="images/saiswara-logo.jpg" class="img-responsive pT10"/></div>
+<div class="col-sm-3"></div>
+<div class="col-sm-7 space-bottom">
+<div class="linkbox">
+<label class="toggle" for="toggle">☰ <span>Menue</span></label>
+<input class="toggle" id="toggle" type="checkbox"/>
+
+<nav class="navbar">
+<ul class="link-margin">
+    
+    <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#service">Our Service</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#whyus">Why Us</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#aboutus">About</a>
+    </li>
+    <li class="nav-item current">
+        <a class="nav-link js-scroll-trigger" href="#">Home</a>
+    </li>
+
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>--%>
+        <div class="main-header navbar-inverse" id="main">
+<div class="container-fuild relative">
+    <nav class="navbar " >
+  <div class="container">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"><img src="images/saiswara_logo_small_2.png" class="img-responsive pT10"/></a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse " id="myNavbar">
+        <ul class="nav navbar-nav">
+  
+    <li class="nav-item current">
+        <a class="nav-link page-scroll js-scroll-trigger" href="#">Home</a>
+    </li>
+             <li class="nav-item">
+        <a class="nav-link page-scroll js-scroll-trigger" href="#aboutus">About</a>
+    </li>
+              <li class="nav-item">
+        <a class="nav-link page-scroll js-scroll-trigger" href="#whyus">Why Us</a>
+    </li>
+                       <li class="nav-item">
+        <a class="nav-link page-scroll js-scroll-trigger" href="#service">Our Service</a>
+    </li>
+     <li class="nav-item">
+       <a class="nav-link page-scroll js-scroll-trigger" href="#contact">Contact</a>
+    </li>
+            </ul>
+          
+        
+          </div>
+        
+      </div>
+    </div>
+ 
+</nav>    
+
+</div>
+    </div>
+
+</header>
+</head>
+<body >
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+        
+        <section class="section_low_spacing" style="background: #3b3c3e;">
+           <%-- <a href="#" class="scrollup" style="display: inline;">Scroll</a>--%>
+            <button class="scrollup tran3s color2_bg" style="display: block;">
+        <span class="fa fa-angle-up"></span>
+    </button>
+<p class="footer-text">© 2018 Saiswara - All Rights Reserved</p>
+</section>
+           <script type="text/javascript">
+               $(document).ready(function () {
+
+                   $(window).scroll(function () {
+                       if ($(this).scrollTop() > 600) {
+                           $('.scrollup').fadeIn();
+                       } else {
+                           $('.scrollup').fadeOut();
+                       }
+                   });
+
+                   $('.scrollup').click(function () {
+                       $("html, body").animate({ scrollTop: 0 }, 600);
+                       return false;
+                   });
+
+               });
+      </script>
+
+<script type="text/javascript"> function toggle_menu() {
+     $("#menu_link").slideToggle();
+ }</script>
+       <script>
+            $("ul.nav.navbar-nav li a").click(function () {
+                $(".navbar-collapse").removeClass("in");
+            });
+
+            // jQuery ScrollSpy
+            $('body').scrollspy({
+                target: '.navbar-collapse',
+                offset: 200
+            });
+        </script>
+
+    <script>
+        $(document).ready(function () {
+            $('#main').affix({
+                offset: {
+                    top: $('header').height()
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            var animspeed = 950; // animation speed in milliseconds
+
+            var $blockquote = $('.bigtext');
+            var height = $blockquote.height();
+            var mini = $('.bigtext p').eq(0).height() + $('.bigtext p').eq(1).height() + $('.bigtext p').eq(2).height() + $('.bigtext p').eq(2).height();
+
+            $blockquote.attr('data-fullheight', '388' + 'px');
+            //$blockquote.attr('data-miniheight',mini+'px');
+            $blockquote.attr('data-miniheight', '190' + 'px');
+            $blockquote.css('height', '190' + 'px');
+
+
+            $('.expand').on('click', function (e) {
+                $text = $(this).prev();
+
+                $text.animate({
+                    'height': $text.attr('data-fullheight')
+                }, animspeed);
+                $(this).next('.contract').removeClass('hide');
+                $(this).addClass('hide');
+            });
+
+            $('.contract').on('click', function (e) {
+                $text = $(this).prev().prev();
+
+                $text.animate({
+                    'height': $text.attr('data-miniheight')
+                }, animspeed);
+                $(this).prev('.expand').removeClass('hide');
+                $(this).addClass('hide');
+            });
+        });
+    </script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            autoplayTimeout: 10000,
+            autoplayHoverPause: true,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true
+                },
+                600: {
+                    items: 2,
+                    nav: false
+                },
+                768: {
+                    items: 3,
+                    nav: false
+                },
+                1000: {
+                    items: 4,
+                    nav: true,
+                    loop: false
+                }
+            }
+        })
+    </script>
+    <!--<script>
+            $(document).ready(function() {
+              var owl = $('.owl-carousel');
+              owl.owlCarousel({
+                items: 4,
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                autoplayTimeout: 1000,
+                autoplayHoverPause: true
+              });
+              $('.play').on('click', function() {
+                owl.trigger('play.owl.autoplay', [1000])
+              })
+              $('.stop').on('click', function() {
+                owl.trigger('stop.owl.autoplay')
+              })
+            })
+    </script>-->
+    <script>
+        (function ($) {
+            "use strict"; // Start of use strict
+
+            // Smooth scrolling using jQuery easing
+            $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html, body').animate({
+                            scrollTop: (target.offset().top - 100)
+                        }, 1000, "easeInOutExpo");
+                        return false;
+                    }
+                }
+            });
+
+            // Closes responsive menu when a scroll trigger link is clicked
+            $('.js-scroll-trigger').click(function () {
+                $('.navbar-collapse').collapse('hide');
+            });
+
+            // Activate scrollspy to add active class to navbar items on scroll
+            $('body').scrollspy({
+                target: '#mainNav',
+                offset: 100
+            });
+
+        })(jQuery); // End of use strict
+    </script>
+    </div>
+    </form>
+</body>
+</html>
