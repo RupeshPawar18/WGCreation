@@ -5,13 +5,18 @@ using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
+
 
 public partial class index : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        btnSend.Attributes.Add("onclick", "return validate()");
-        btnSubmit.Attributes.Add("onclick", "return validateCandidate()");
+        if (!IsPostBack)
+        {
+            btnSend.Attributes.Add("onclick", "return validate()");
+            btnSubmit.Attributes.Add("onclick", "return validateCandidate()");
+        }
     }
 
     protected void btnSend_Click(object sender, EventArgs e)
@@ -28,8 +33,8 @@ public partial class index : System.Web.UI.Page
 
         string strThankYouSubject = "Thank You For Your Interest";
 
-        //string Src_Email = "enquiry@winnspireinternational.com";
-        string Src_Email = "info@saiswaraconsultancy.com";
+        string Src_Email = "enquiry@saiswaraconsultancy.com";
+        //string Src_Email = "info@saiswaraconsultancy.com";
         string dest_email = "hr@saiswaraconsultancy.com";
         string strThankYouBody = "Thanks for contacting SaiSwara Consultancy! \n This is just a quick note to let you know we have received your message and will respond as soon as we can. \n Best,\n SaiSwara Consultancy Team";
 
@@ -67,7 +72,7 @@ public partial class index : System.Web.UI.Page
             smtp.EnableSsl = false;
             smtp.UseDefaultCredentials = true;
             //smtp.Credentials = new System.Net.NetworkCredential(Src_Email, "9969153636"); // ***use valid credentials***
-            smtp.Credentials = new System.Net.NetworkCredential(Src_Email, "Swara@#2018"); // ***use valid credentials***
+            smtp.Credentials = new System.Net.NetworkCredential(Src_Email, "Pass@123"); // ***use valid credentials***
             //smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
             smtp.Port = 25;
 
@@ -75,6 +80,8 @@ public partial class index : System.Web.UI.Page
 
             smtp.Send(mail);
             smtp.Send(dest_email, txtEmail.Text, strThankYouSubject, strThankYouBody);
+            //smtp.Dispose();
+            mail.Dispose();
 
             txtUserName.Text = "";
             txtMobile.Text = "";
@@ -86,7 +93,10 @@ public partial class index : System.Web.UI.Page
 
 
 
-            Response.Write("<script>alert('" + Server.HtmlEncode("Email Sent Successfully!!!!!!!") + "')</script>");
+            //Response.Write("<script>alert('" + Server.HtmlEncode("Email Sent Successfully!!!!!!!") + "')</script>");
+            Response.Redirect("ThankYou.aspx");
+
+            //MessageBox.Show("Email Sent Successfully!!!!!!!");
         }
         catch (Exception ex)
         {
@@ -106,8 +116,8 @@ public partial class index : System.Web.UI.Page
 
         string strThankYouSubject = "Thank You For Your Interest";
 
-        //string Src_Email = "enquiry@winnspireinternational.com";
-        string Src_Email = "info@saiswaraconsultancy.com";
+        string Src_Email = "enquiry@saiswaraconsultancy.com";
+        //string Src_Email = "info@saiswaraconsultancy.com";
         string dest_email = "hr@saiswaraconsultancy.com";
         string strThankYouBody = "Thanks for contacting SaiSwara Consultancy! \n This is just a quick note to let you know we have received your message and will respond as soon as we can. \n Best,\n SaiSwara Consultancy Team";
 
@@ -121,9 +131,20 @@ public partial class index : System.Web.UI.Page
             if (CFileUpload.HasFile)
             {
                 string FileName = CFileUpload.FileName;
-                CFileUpload.PostedFile.SaveAs(Server.MapPath("~/Data/") + FileName);
-                Attachment at = new Attachment(Server.MapPath("~/Data/" + FileName));
-                mail.Attachments.Add(at);
+                string FileExtension = FileName.Substring(FileName.LastIndexOf('.') + 1).ToLower();
+                if (FileExtension != "pdf" && FileExtension != "xls" && FileExtension != "xlsx" && FileExtension != "doc" && FileExtension != "docx" && FileExtension != "pages" && FileExtension != "txt")
+                {
+                    Response.Write("<script>alert('" + Server.HtmlEncode("Valid File Types Are - PDF,DOC,DOCX,XLS,XLSX,PAGES,TXT ") + "')</script>");
+                    return;
+                }
+                else
+                {
+
+                    CFileUpload.PostedFile.SaveAs(Server.MapPath("~/Data/") + FileName);
+                    Attachment at = new Attachment(Server.MapPath("~/Data/" + FileName));
+                    mail.Attachments.Add(at);
+                    
+                }
             }
 
             string body = "Kindly Contact Below Mention Candidate :\n\n";
@@ -145,7 +166,7 @@ public partial class index : System.Web.UI.Page
             smtp.EnableSsl = false;
             smtp.UseDefaultCredentials = true;
             //smtp.Credentials = new System.Net.NetworkCredential(Src_Email, "9969153636"); // ***use valid credentials***
-            smtp.Credentials = new System.Net.NetworkCredential(Src_Email, "Swara@#2018"); // ***use valid credentials***
+            smtp.Credentials = new System.Net.NetworkCredential(Src_Email, "Pass@123"); // ***use valid credentials***
             //smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
             smtp.Port = 25;
 
@@ -153,15 +174,16 @@ public partial class index : System.Web.UI.Page
 
             smtp.Send(mail);
             smtp.Send(dest_email, txtCEmail.Text, strThankYouSubject, strThankYouBody);
+            mail.Dispose();
 
             txtCName.Text = "";
             txtCName.Text = "";
             txtCEmail.Text = "";
             txtCNumber.Text = "";
 
+            Response.Redirect("ThankYouResume.aspx");
 
-
-            Response.Write("<script>alert('" + Server.HtmlEncode("Email Sent Successfully!!!!!!!") + "')</script>");
+            //Response.Write("<script>alert('" + Server.HtmlEncode("Email Sent Successfully!!!!!!!") + "')</script>");
         }
         catch (Exception ex)
         {

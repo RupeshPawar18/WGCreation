@@ -1,0 +1,230 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Design.master.cs" Inherits="Design" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Winnspireinternational school</title>
+
+
+    <!-- custom-theme -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta property="og:type" content="website" />
+<meta property="og:title" content="Winnspire International - One of the top preschool in India" />
+<meta property="og:description" content="" />
+<meta property="og:url" content="http://www.winnspireinternational.com" />
+<meta name="description" content="The top most preschool with friendly environment including all upgraded activities helpful to kid grow mentally, physically and spiritually.">
+<meta name="keywords" content="Playgroup near by Dadar,  daycare activity, virtual tour activity, toddlers playgroup, preschool activities, preschool children games"
+    <!------ Include the above in your HEAD tag ---------->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/Style.css" rel="stylesheet" />
+    <link href="css/swiper.css" rel="stylesheet" />
+   <link href="css/animate.css" rel="stylesheet" />
+    <!-- <link href="font/fonts_style.css" rel="stylesheet" />-->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Delius" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- js -->
+    <script src="js/wow.js"></script>
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <!-- //js -->
+    <script src="js/swiper.js"></script>
+    <!-- font-awesome-icons -->
+    <link href="css/font-awesome.css" rel="stylesheet" />
+    <!-- //font-awesome-icons -->
+    <!-- for bootstrap working -->
+    <script src="js/bootstrap.js"></script>
+    <!-- //for bootstrap working -->
+  
+    <script>
+        $(function () {
+            var logo = $(".lrg-logo"); $(window).scroll(function () {
+                var scroll = $(window).scrollTop();
+
+                if (scroll >= 500) {
+                    if (!logo.hasClass("sml-logo")) {
+                        logo.hide();
+                        logo.removeClass('lrg-logo').addClass("sml-logo").fadeIn("slow");
+                    }
+                } else {
+                    if (!logo.hasClass("lrg-logo")) {
+                        logo.hide();
+                        logo.removeClass("sml-logo").addClass('lrg-logo').fadeIn("slow");
+                    }
+                }
+
+            });
+        });
+
+        //if($("#enroll").is(":visible")) {
+        //$("#name").focus();
+        //}
+    </script>
+       
+    <script type="text/javascript">
+        new WOW().init();
+        // $(document).ready(function(){
+        //               $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+        //     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+        //       var target = $(this.hash);
+        //       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        //       if (target.length) {
+        //         $('html, body').animate({
+        //           scrollTop: (target.offset().top - 48)
+        //         }, 1000, "easeInOutExpo");
+        //         return false;
+        //       }
+        //     }
+        //   });
+        //          ) };
+        $(document).ready(function () {
+            $(".apply-block").find("a").click(function (e) {
+                e.preventDefault();
+                var section = $(this).attr("href");
+                $("html, body").animate({
+                    scrollTop: ($(section).offset().top - 60)
+                }, 1000);
+            });
+        });
+
+    </script>
+  
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 100) {
+                        $('.scrollup').fadeIn();
+                    } else {
+                        $('.scrollup').fadeOut();
+                    }
+                });
+
+                $('.scrollup').click(function () {
+                    $("html, body").animate({ scrollTop: 0 }, 600);
+                    return false;
+                });
+
+            });
+		</script>
+
+  <%--  <script>
+        $('#applyBtn').click(function () {
+            $('#name').addClass("focus");
+        });
+    </script>--%>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <div class="brand-centered">
+                    <a class="navbar-brand lrg-logo" href="#">
+                        <img src="img/opening-page1.png" alt="Winnspireinternational logo" class="img img-responsive">
+                    </a>
+                </div>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="http://winnspireinternational.com/">Home</a></li>
+                    <li><a href="AboutUs.aspx">About</a></li>
+                    <li><a href="#">Why Us</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Programmes</a></li>
+                    <li><a href="#">Franchisee</a></li>
+                    <li><a href="#">Contact Us </a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+           
+            <section class="container-fluid" id="footer">
+
+    <div class="container">
+
+        <div class="row text-center text-xs-center text-sm-left text-md-left">
+
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <img src="img/footerlogo.jpg" class="img img-responsive ftlogo" />
+                <%--   <h5>Social Media Platforms</h5>
+                    <ul class="list-unstyled list-inline social text-center ftsicon">
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus"></i></a></li>
+                        <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                    </ul>--%>
+            </div>
+
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <h5>Address:-</h5>
+                <ul class="list-unstyled list-inline social text-center ftsicon">
+                    <li class="list-inline-item"><i class="fa fa-university" aria-hidden="true"></i> Kamladevi Apartment, Prin. N.M.Kale Marg, Off S.K Bole Marg, Agar Bazar, Opp. Raheja Princess, Dadar (West), Mumbai - 400028</li>
+                    <li class="list-inline-item"><i class="fa fa-mobile"></i> Contact Number :- +(91)<a href="tel:9137182499" style="color:#fff;"> 9137182499 </a> | <a href="tel:7045144413" style="color:#fff;">7045144413 </a> </li>
+                    <li class="list-inline-item"><i class="fa fa-envelope"></i> Email id:- <a href="mailto:info@winnspireinternational.com" style="color:#fff;"> info@winnspireinternational.com</a>
+
+                    </li>
+
+                </ul>
+                <h5>Social Media Platforms</h5>
+                <ul class="list-unstyled list-inline social text-center ftsicon">
+                    <li class="list-inline-item"><a href="https://www.facebook.com/winnspire.international" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <h6>Quick links</h6>
+                <ul class="list-unstyled quick-links">
+                    <li><a href="http://winnspireinternational.com/"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                    <li><a href="AboutUs.aspx"><i class="fa fa-angle-double-right"></i>About</a></li>
+                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Why Us</a></li>
+                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Programmes</a></li>
+                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Franchisee</a></li>
+                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Contact Us </a></li>
+
+
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 copy text-white">
+
+                <p class="h6 text-green ml-2">&copy All Copyright Reserved.<a href="#" target="_blank"> Winners Digital Advertising</a></p>
+
+            </div>
+             <a href="#" class="scrollup" style="display: none;">Scroll</a>
+        </div>
+    </div>
+</section>
+        </div>
+
+    </form>
+
+</body>
+</html>

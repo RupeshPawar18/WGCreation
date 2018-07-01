@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>News</title>
+
+    <base target="_parent">
+
+    <link rel="stylesheet" href="news_scroll.css" type="text/css">
+</head>
+
+<body class="news-scroll" onmouseover="scrollspeed=0" onmouseout="scrollspeed=current" onload="NewsScrollStart();">
+
+
+    <!-- START NEWS FEED -->
+    <div id="NewsDiv">
+
+
+
+
+
+
+
+
+        <div class="scroll-text-if">
+
+            <!-- SCROLLER CONTENT STARTS HERE -->
+
+
+
+
+
+            <div class="vticker">
+                <!--<h5 class="scroll-title-if">
+News Scroller
+</h5>-->
+
+                <div class="news">
+                    <span class="btn_icon news_absolute bg_yellow" target="_blank">N</span>
+                     <h5 class="scroll-title-if">
+News & Updates
+</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu ante purus. Etiam condimentum iaculis facilisis.  </p>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="vticker">
+                <div class="news">
+                    <span class="btn_icon news_absolute bg_yellow" target="_blank">N</span>
+                     <h5 class="scroll-title-if">
+News & Updates
+</h5>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu ante purus. Etiam condimentum iaculis facilisis.  </p>
+                </div>
+
+            </div>
+
+            <div class="vticker">
+                <div class="news">
+                    <span class="btn_icon news_absolute bg_yellow" target="_blank">N</span>
+                     <h5 class="scroll-title-if">
+News & Updates
+</h5>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu ante purus. Etiam condimentum iaculis facilisis.  </p>
+                </div>
+
+            </div>
+            <div class="vticker">
+                <div class="news">
+                    <span class="btn_icon news_absolute bg_yellow" target="_blank">N</span>
+                     <h5 class="scroll-title-if">
+News & Updates
+</h5>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu ante purus. Etiam condimentum iaculis facilisis.  </p>
+                </div>
+            </div>
+            <div class="vticker">
+                <div class="news">
+                    <span class="btn_icon news_absolute bg_yellow" target="_blank">N</span>
+                     <h5 class="scroll-title-if">
+News & Updates
+</h5>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu ante purus. Etiam condimentum iaculis facilisis.  </p>
+                </div>
+            </div>
+            <div class="vticker">
+               
+
+                <div class="news">
+                    <span class="btn_icon news_absolute bg_yellow" target="_blank">N</span>
+                     <h5 class="scroll-title-if">
+News & Updates
+</h5>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu ante purus. Etiam condimentum iaculis facilisis.  </p>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="vticker">
+                <div class="news">
+                     <h5 class="scroll-title-if">
+News & Updates
+</h5>
+                    <span class="btn_icon news_absolute bg_yellow" target="_blank">N</span>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu ante purus. Etiam condimentum iaculis facilisis.  </p>
+                </div>
+
+            </div>
+
+            <div class="vticker">
+                <div class="news">
+                    <span class="btn_icon news_absolute bg_yellow" target="_blank">N</span>
+                     <h5 class="scroll-title-if">
+News & Updates
+</h5>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu ante purus. Etiam condimentum iaculis facilisis.  </p>
+                </div>
+
+            </div>
+            <div class="vticker">
+                <div class="news">
+                    <span class="btn_icon news_absolute bg_yellow" target="_blank">N</span>
+                     <h5 class="scroll-title-if">
+News & Updates
+</h5>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu ante purus. Etiam condimentum iaculis facilisis.  </p>
+                </div>
+            </div>
+            <div class="vticker">
+                <div class="news">
+                    <span class="btn_icon news_absolute bg_yellow" target="_blank">N</span>
+                     <h5 class="scroll-title-if">
+News & Updates
+</h5>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu ante purus. Etiam condimentum iaculis facilisis.  </p>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- END SCROLLER CONTENT -->
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <!-- END NEWS FEED -->
+
+
+
+
+    <!-- YOU DO NOT NEED TO EDIT BELOW THIS LINE -->
+
+    <script type="text/javascript">
+
+
+        var startdelay = 2; 		// START SCROLLING DELAY IN SECONDS
+        var scrollspeed = 1.1;		// ADJUST SCROLL SPEED
+        var scrollwind = 1;		// FRAME START ADJUST
+        var speedjump = 30;		// ADJUST SCROLL JUMPING = RANGE 20 TO 40
+        var nextdelay = 0; 		// SECOND SCROLL DELAY IN SECONDS 0 = QUICKEST
+        var topspace = "2px";	// TOP SPACING FIRST TIME SCROLLING
+        var frameheight = 176;		// IF YOU RESIZE THE CSS HEIGHT, EDIT THIS HEIGHT TO MATCH
+
+
+        current = (scrollspeed);
+
+
+        function HeightData() {
+            AreaHeight = dataobj.offsetHeight
+            if (AreaHeight === 0) {
+                setTimeout("HeightData()", (startdelay * 1000))
+            }
+            else {
+                ScrollNewsDiv()
+            }
+        }
+
+        function NewsScrollStart() {
+            dataobj = document.all ? document.all.NewsDiv : document.getElementById("NewsDiv")
+            dataobj.style.top = topspace
+            setTimeout("HeightData()", (startdelay * 1000))
+        }
+
+        function ScrollNewsDiv() {
+            dataobj.style.top = scrollwind + 'px';
+            scrollwind -= scrollspeed;
+            if (parseInt(dataobj.style.top) < AreaHeight * (-1)) {
+                dataobj.style.top = frameheight + 'px';
+                scrollwind = frameheight;
+                setTimeout("ScrollNewsDiv()", (nextdelay * 1000))
+            }
+            else {
+                setTimeout("ScrollNewsDiv()", speedjump)
+            }
+        }
+
+
+    </script>
+
+
+</body>
+</html>
